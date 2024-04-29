@@ -15,12 +15,14 @@ namespace eventManager
             Console.WriteLine(e.ToString());
         }
 
+
 /// <summary>
 /// This method will read in and create a list of events from a file.
 /// Note that a fresh list is created each time. 
 /// </summary>
 /// <param name="path">T</param>
 /// <returns></returns>
+  
         static List<Event> ReadEvents(string path)
         {
             List<Event> events = new List<Event>();
@@ -79,15 +81,7 @@ namespace eventManager
             {
                 Console.WriteLine($"File: {path} not found: {ex.Message}");
             }
-            catch(ArgumentException ex) 
-            {
-                Console.WriteLine($"Error in creating Object - invalid data {ex.Message}");
-
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+         
             return events;
 
         }
@@ -101,8 +95,8 @@ namespace eventManager
 /// 
 /// 
 /// </summary>
-    /// <param name="eventType"></param>
-    /// <returns>true if valid, false otherwise </returns>
+/// <param name="eventType"></param>
+/// <returns>true if valid, false otherwise </returns>
     public static bool CheckValidType(string eventType)
         {
 
